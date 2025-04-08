@@ -1,6 +1,6 @@
 package animals;
-/*Crea las clases Animal, Mamifero, Ave, Reptil: Gato, Perro, Canario, Pinguino y Lagarto. Crea,
-al menos, tres métodos específicos de cada clase y redefne el/los método/s
+/*Crea las clases Animal, Mamifero, Ave, Reptil: Gato, Perro, Canario, Pinguino y Lagarto. 
+Crea, al menos, tres métodos específicos de cada clase y redefne el/los método/s
 cuando sea necesario. Prueba las clases creadas en un programa en el que se
 instancien objetos y se les apliquen métodos. */
 
