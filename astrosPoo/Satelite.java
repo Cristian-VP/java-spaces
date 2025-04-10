@@ -1,4 +1,6 @@
-class Satelite extends Astro {
+package astrosPoo;
+
+public class Satelite extends Astro {
     private String name;
     private Double radio, rotacion, masa, temperatura, gravedad, traslacionSatelite, distanciaPlaneta;
   

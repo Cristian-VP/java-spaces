@@ -1,3 +1,6 @@
+package astrosPoo;
+
+
 class Astro{
     private String name;
     private Double radio, rotacion, masa, temperatura, gravedad;

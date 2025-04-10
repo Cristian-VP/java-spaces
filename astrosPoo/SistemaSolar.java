@@ -1,3 +1,4 @@
+package astrosPoo;
 import java.util.HashSet;
 
 class SistemaSolar{
