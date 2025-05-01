@@ -68,8 +68,8 @@ class Pizza {
             return;
         }else{
             System.out.println("Gracias por su pedido");
-            System.out.println("Tu pizza es de tamaño " + this.tamaño + " y tipo " + this.tipo);
-            System.out.println("El estado de tu pizza es " + this.estado);
+            System.out.println("Tu pizza es de tamaño " + getTamaño() + " y tipo " + getTipo());
+            System.out.println("El estado de tu pizza es " + getEstado());
         }
        
     }
