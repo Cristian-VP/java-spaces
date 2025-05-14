@@ -11,9 +11,9 @@ que la clase funciona bien.
  */
 
 public class Tiempo {
-    int hours;
-    int minuts;
-    int seconds;
+    private int hours;
+    private int minuts;
+    private int seconds;
 
     public Tiempo(int h, int m, int s) {
         this.hours = (h >= 0 && h < 24) ? h : 0;
@@ -30,6 +30,17 @@ public class Tiempo {
     }
     public void setSeconds(int s) {
         this.seconds = (s >= 0 && s < 60) ? s : 0;
+    }
+
+    //Getters
+    public int getHours() {
+        return this.hours;
+    }
+    public int getMinuts() {
+        return this.minuts;
+    }
+    public int getSeconds() {
+        return this.seconds;
     }
     
     public void sum(int h, int m, int s) {
