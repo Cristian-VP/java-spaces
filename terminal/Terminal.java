@@ -11,15 +11,23 @@ que debe aparecer por pantalla.
 public class Terminal implements Comunicable {
     private static Tiempo tiempoTotal = new Tiempo(0, 0, 0); 
     private String numero;
-    private int segundos;
+    private Tiempo tiempoLlamada;
 
     public Terminal(String number) {
         this.numero = number;
-        this.segundos = 0;
+        this.tiempoLlamada = new Tiempo(0, 0, 0);
     }
 
     public String getNumero() {
         return numero;
+    }
+
+    public int getSegundos() {
+        return  tiempoLlamada.getSeconds();
+    }
+
+    public int getMinutos() {
+        return tiempoLlamada.getMinuts();
     }
 
     public static Tiempo getTiempoTotalTerminales() {
@@ -27,7 +35,7 @@ public class Terminal implements Comunicable {
     }
 
     public void setTiempo(int segundos) {
-        this.segundos += segundos;
+        tiempoLlamada.setSeconds(segundos);;
     }
 
     public void llama(Terminal terminal, int segundos) {
@@ -37,7 +45,7 @@ public class Terminal implements Comunicable {
     }
     
     public String toString() {
-        return "Nº " + this.numero + " - " + this.segundos + "s " + "de conversación";
+        return "Nº " + this.numero + " - " + tiempoLlamada.getSeconds() + "s " + "de conversación";
     }
 
 }    
