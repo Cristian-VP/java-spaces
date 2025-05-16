@@ -1,5 +1,6 @@
 class Main {
     public static void main(String[] args) {
+
         Ameba a1 = new Ameba();
         a1.come(2);
         System.out.println(a1);
@@ -11,5 +12,6 @@ class Main {
         System.out.println(a2);
         a2.come(3);
         System.out.println(a2);
+
     }
 }
