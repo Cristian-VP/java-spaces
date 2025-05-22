@@ -1,6 +1,10 @@
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.stream.Stream;
 
 public class Ex03 {
     /*
@@ -16,19 +20,35 @@ pueden tener tamaños diferentes.
      */
     public static void main(String args []) {
         try{
-
-            FileWriter mixNumbers = new FileWriter("mixnumbers.dat");
-            BufferedWriter bw = new BufferedWriter(mixNumbers);
-            BufferedReader br1 = new BufferedReader( new FileReader("primos.dat"));
-            BufferedReader br2 = new BufferedReader( new FileReader("sqrtPrimes.dat"));
-
-            Stream<String> stream1 = br1.lines();
-            Stream<String> stream2 = br2.lines();
-
+            String dataPrimes, dataSqrtPrimes;
+            FileWriter mixNumbers = new FileWriter( "mixnumbers.dat" );
             
+            BufferedWriter writeBW = new BufferedWriter( mixNumbers );
+            BufferedReader primesBR = new BufferedReader( new FileReader("primos.dat" ));
+            BufferedReader sqrtPrimesBR = new BufferedReader( new FileReader("sqrtPrimes.dat" ));
+            
+            dataPrimes = primesBR.readLine();
+            dataSqrtPrimes = sqrtPrimesBR.readLine();
+            
+            while( dataPrimes != null || dataSqrtPrimes != null ) {
+                if( dataPrimes != null ) {
+                    writeBW.write( dataPrimes + "\n" );
+                    dataPrimes = primesBR.readLine();
+                }
+                if( dataSqrtPrimes != null ) {
+                    writeBW.write( dataSqrtPrimes + "\n" );
+                    dataSqrtPrimes = sqrtPrimesBR.readLine();
+                }
+            }            
+            
+            writeBW.close();
+            primesBR.close();
+            sqrtPrimesBR.close();
 
         }catch (IOException e) {
+
             System.out.println("Error al escribir en el archivo: " + e.getMessage());
-        }
+
+        } 
     }
 }
